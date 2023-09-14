@@ -1,2 +1,4 @@
 require("e12.remap")
-print("hello e12")
+require("e12.set")
+
+

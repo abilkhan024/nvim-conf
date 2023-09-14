@@ -23,4 +23,11 @@ return require('packer').startup(function(use)
   use { 
 	  'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'}
   }
+  -- using packer.nvim
+  use {
+	  'akinsho/bufferline.nvim',
+	  tag = "*",
+	  requires = 'nvim-tree/nvim-web-devicons'
+  }
+
 end)
