@@ -30,4 +30,10 @@ return require('packer').startup(function(use)
 	  requires = 'nvim-tree/nvim-web-devicons'
   }
 
+  use {
+	  "williamboman/mason.nvim",
+	  "williamboman/mason-lspconfig.nvim",
+	  "neovim/nvim-lspconfig",
+  }
+
 end)
