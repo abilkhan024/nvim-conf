@@ -20,9 +20,7 @@ return require('packer').startup(function(use)
 	  end
   }
 
-  use { 
-	  'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'}
-  }
+  use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'} }
   -- using packer.nvim
   use {
 	  'akinsho/bufferline.nvim',
@@ -45,6 +43,8 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},     -- Required
 	  }
   }
+
+  use { 'lewis6991/gitsigns.nvim' }
 
   use {
 	  "nvim-neo-tree/neo-tree.nvim",
