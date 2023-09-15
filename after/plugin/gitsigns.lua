@@ -1,4 +1,4 @@
-require('gitsigns').setup {
+require('gitsigns').setup{
 	signs = {
 		add          = { text = '│' },
 		change       = { text = '│' },
@@ -63,17 +63,14 @@ require('gitsigns').setup {
 		-- Actions
 		map('n', '<leader>ga', gs.stage_hunk)
 		map('n', '<leader>gr', gs.reset_hunk)
+		map('n', '<leader>gu', gs.undo_stage_hunk)
 		map('v', '<leader>ga', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
 		map('v', '<leader>gr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-		map('n', '<leader>hS', gs.stage_buffer)
-		map('n', '<leader>gu', gs.undo_stage_hunk)
-		map('n', '<leader>hR', gs.reset_buffer)
-		map('n', '<leader>hp', gs.preview_hunk)
-		map('n', '<leader>hb', function() gs.blame_line{full=true} end)
-		map('n', '<leader>gb', gs.toggle_current_line_blame)
+		map('v', '<leader>gu', function() gs.undo_stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+		map('n', '<leader>ge', gs.preview_hunk)
+		map('n', '<leader>gb', function() gs.blame_line{full=true} end)
 		map('n', '<leader>hd', gs.diffthis)
-		map('n', '<leader>hD', function() gs.diffthis('~') end)
-		map('n', '<leader>td', gs.toggle_deleted)
+		map('n', '<leader>gd', function() gs.diffthis('~') end)
 
 		-- Text object
 		map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
