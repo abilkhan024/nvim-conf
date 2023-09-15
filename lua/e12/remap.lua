@@ -6,5 +6,7 @@ vim.keymap.set("n", "<leader>so", vim.cmd.so)
 vim.keymap.set("n", "<leader>c", vim.cmd.bd)
 vim.keymap.set("n", "<C-w>", "<cmd>set wrap!<CR>")
 
+vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
+
 
 
