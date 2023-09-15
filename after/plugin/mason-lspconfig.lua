@@ -3,5 +3,6 @@ require("mason-lspconfig").setup({
 	 	'volar',
 		'tsserver',
 		'lua_ls',
+		'intelephense',
 	}
 })
