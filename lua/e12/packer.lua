@@ -46,6 +46,8 @@ return require('packer').startup(function(use)
 
   use { 'lewis6991/gitsigns.nvim' }
 
+  use { 'feline-nvim/feline.nvim' }
+
   use {
 	  "nvim-neo-tree/neo-tree.nvim",
 	  branch = "v3.x",
