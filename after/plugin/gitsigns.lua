@@ -56,7 +56,6 @@ require('gitsigns').setup{
 		map('v', '<leader>gu', function() gs.undo_stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
 		map('n', '<leader>ge', gs.preview_hunk)
 		map('n', '<leader>gb', function() gs.blame_line{full=true} end)
-		map('n', '<leader>hd', gs.diffthis)
 		map('n', '<leader>gd', function() gs.diffthis('~') end)
 	end
 }
