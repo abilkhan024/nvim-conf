@@ -10,4 +10,55 @@ vim.keymap.set("n", "<C-w>", "<cmd>set wrap!<CR>")
 vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
 
 
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Depends on git config
+--[[
+[alias]
+    pb = !git push origin $(git symbolic-ref --short HEAD)
+
+    lbf = "!f() { \
+        if [ \"$1\" = \"\" ]; then \
+            git pull origin $(git symbolic-ref --short HEAD) --no-ff; \
+        else \
+            git pull origin \"$1\" --no-ff; \
+        fi \
+    }; f"
+    lb = "!f() { \
+        if [ \"$1\" = \"\" ]; then \
+            git pull origin $(git symbolic-ref --short HEAD); \
+        else \
+            git pull origin \"$1\"; \
+        fi \
+    }; f"
+    c = checkout
+--]]
+vim.keymap.set("n", "<leader>gpb", "<cmd>!git pb<CR>")
+vim.keymap.set("n", "<leader>gld", "<cmd>!git lb<CR>")
+vim.keymap.set("n", "<leader>glf", "<cmd>!git lbf<CR>")
+vim.keymap.set("n", "<leader>gc", [[:lua GitCheckout()<CR>]])
+-- Depends on git config
+
+
+
+function GitCheckout()
+	local user_input = vim.fn.input("git checkout >")
+	if user_input ~= "" then
+		local git_command = "git c " .. user_input
+		local result = vim.fn.systemlist(git_command)
+		if result and #result > 0 then
+			vim.cmd("echohl Normal | echomsg 'Git Command Result:' | echohl None")
+			vim.cmd("echomsg ''")  -- Add an empty line
+			vim.cmd("echomsg ''")  -- Add an empty line
+			for _, line in ipairs(result) do
+				vim.cmd("echomsg " .. vim.fn.string(line))
+			end
+		else
+			vim.cmd("echo 'No output from Git command.'")
+		end
+	else
+		vim.cmd("echo 'No input provided.'")
+	end
+end
 
