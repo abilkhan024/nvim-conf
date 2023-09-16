@@ -30,6 +30,16 @@ return require('packer').startup(function(use)
 
   use { 'jiangmiao/auto-pairs' }
 
+	use({
+		"Pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup {
+				-- your config goes here
+				-- or just leave it empty :)
+			}
+		end,
+	})
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v2.x',
