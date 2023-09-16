@@ -39,16 +39,15 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --]]
 vim.keymap.set("n", "<leader>gpb", "<cmd>!git pb<CR>")
 vim.keymap.set("n", "<leader>gld", "<cmd>!git lb<CR>")
-vim.keymap.set("n", "<leader>glf", "<cmd>!git lbf<CR>")
-vim.keymap.set("n", "<leader>gc", [[:lua GitCheckout()<CR>]])
+vim.keymap.set("n", "<leader>glf", [[:lua GitCustom('lbf')<CR>]])
+vim.keymap.set("n", "<leader>gc", [[:lua GitCustom('c')<CR>]])
 -- Depends on git config
 
 
-
-function GitCheckout()
-	local user_input = vim.fn.input("git checkout >")
+function GitCustom(command)
+	local user_input = vim.fn.input("git " .. command .." >")
 	if user_input ~= "" then
-		local git_command = "git c " .. user_input
+		local git_command = "git  " .. command .. " " .. user_input
 		local result = vim.fn.systemlist(git_command)
 		if result and #result > 0 then
 			vim.cmd("echohl Normal | echomsg 'Git Command Result:' | echohl None")
