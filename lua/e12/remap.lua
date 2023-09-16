@@ -7,6 +7,8 @@ vim.keymap.set("n", "<leader>c", vim.cmd.bd)
 vim.keymap.set("n", "<leader>ho", vim.cmd.noh)
 
 vim.api.nvim_set_keymap('n', '<leader>C', [[:%bd|e#|bd#<CR>'"]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ss2', [[:set tabstop=2<CR>:set shiftwidth=2<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ss4', [[:set tabstop=4<CR>:set shiftwidth=4<CR>]], { noremap = true, silent = true })
 vim.keymap.set("n", "<C-w>", "<cmd>set wrap!<CR>")
 
 vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")

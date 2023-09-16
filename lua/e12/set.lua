@@ -16,3 +16,5 @@ vim.opt.so = 50
 
 vim.g.mapleader = " "
 
+vim.g.expandtab = true
+
