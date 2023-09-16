@@ -34,11 +34,13 @@ return require('packer').startup(function(use)
 		"Pocco81/auto-save.nvim",
 		config = function()
 			require("auto-save").setup {
-				-- your config goes here
-				-- or just leave it empty :)
+				debounce_delay = 500,
 			}
 		end,
 	})
+
+	-- TODO spend some time because seems like to good
+	use { 'terryma/vim-multiple-cursors' }
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
