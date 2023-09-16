@@ -4,6 +4,8 @@ vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 vim.keymap.set("n", "<leader>so", vim.cmd.so)
 vim.keymap.set("n", "<leader>c", vim.cmd.bd)
+vim.keymap.set("n", "<leader>ho", vim.cmd.noh)
+
 vim.api.nvim_set_keymap('n', '<leader>C', [[:%bd|e#|bd#<CR>'"]], { noremap = true, silent = true })
 vim.keymap.set("n", "<C-w>", "<cmd>set wrap!<CR>")
 
