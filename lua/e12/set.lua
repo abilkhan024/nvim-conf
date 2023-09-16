@@ -8,6 +8,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
+vim.opt.wrap = false
 
 vim.opt.termguicolors = true
 

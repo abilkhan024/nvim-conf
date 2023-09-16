@@ -28,6 +28,8 @@ return require('packer').startup(function(use)
 	  requires = 'nvim-tree/nvim-web-devicons'
   }
 
+  use { 'jiangmiao/auto-pairs' }
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v2.x',
