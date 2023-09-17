@@ -57,6 +57,8 @@ return require('packer').startup(function(use)
 	  end
   }
 
+	use { 'sbdchd/neoformat' }
+
   use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'} }
   -- using packer.nvim
   use {

@@ -1,5 +1,7 @@
 vim.opt.guicursor = ""
 
+vim.g.neoformat_try_node_exe = 1
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
