@@ -16,6 +16,8 @@ vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.api.nvim_set_keymap('n', '<leader>bfd', "<cmd>call delete(expand('%')) | bdelete!<CR>", { noremap = true, silent = true })
+
 -- Depends on git config
 --[[
 [alias]
