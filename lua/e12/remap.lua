@@ -40,7 +40,7 @@ vim.api.nvim_set_keymap('n', '<leader>bfd', "<cmd>call delete(expand('%')) | bde
     c = checkout
 --]]
 vim.keymap.set("n", "<leader>gpb", "<cmd>!git pb<CR>")
-vim.keymap.set("n", "<leader>gld", "<cmd>!git lb<CR>")
+vim.keymap.set("n", "<leader>glb", [[:lua GitCustom('lb')<CR>]])
 vim.keymap.set("n", "<leader>glf", [[:lua GitCustom('lbf')<CR>]])
 vim.keymap.set("n", "<leader>gc", [[:lua GitCustom('c')<CR>]])
 -- Depends on git config
