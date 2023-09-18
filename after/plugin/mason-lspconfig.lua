@@ -4,6 +4,8 @@ require("mason-lspconfig").setup({
 		'tsserver',
 		'lua_ls',
 		'intelephense',
-		'cssls'
+		'cssls',
+		'html',
+		'emmet_language_server',
 	}
 })

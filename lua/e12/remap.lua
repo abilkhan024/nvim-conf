@@ -12,6 +12,7 @@ vim.api.nvim_set_keymap('n', '<leader>ssb', [[:set tabstop=4<CR>:set shiftwidth=
 vim.keymap.set("n", "<C-w>", "<cmd>set wrap!<CR>")
 
 vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
+vim.keymap.set("n", "<leader>pf", "<cmd>Neoformat<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
