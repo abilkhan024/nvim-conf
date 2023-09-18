@@ -94,6 +94,15 @@ return require('packer').startup(function(use)
 
   use { 'feline-nvim/feline.nvim' }
 
+	use ({
+		'nvimdev/lspsaga.nvim',
+		after = 'nvim-lspconfig',
+		config = function()
+			require('lspsaga').setup({})
+		end,
+	})
+
+
   use {
 	  "nvim-neo-tree/neo-tree.nvim",
 	  branch = "v3.x",
@@ -398,6 +407,9 @@ return require('packer').startup(function(use)
 		  }
 	  }
   })
+
+
+
 
   vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
     end
