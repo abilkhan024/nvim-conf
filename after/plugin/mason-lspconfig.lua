@@ -4,5 +4,6 @@ require("mason-lspconfig").setup({
 		'tsserver',
 		'lua_ls',
 		'intelephense',
+		'cssls'
 	}
 })
