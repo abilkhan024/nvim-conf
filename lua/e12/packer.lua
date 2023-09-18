@@ -224,7 +224,7 @@ return require('packer').startup(function(use)
 				  -- see `:h neo-tree-custom-commands-global`
 				  commands = {},
 				  window = {
-					  position = "right",
+					  position = "left",
 					  width = 40,
 					  mapping_options = {
 						  noremap = true,
@@ -239,7 +239,7 @@ return require('packer').startup(function(use)
 						  ["l"] = "open",
 						  ["<esc>"] = "cancel", -- close preview or floating neo-tree window
 						  ["P"] = { "toggle_preview", config = { use_float = true } },
--- 						  ["l"] = "focus_preview",
+						  ["fp"] = "focus_preview",
 						  ["S"] = "open_split",
 						  ["s"] = "open_vsplit",
 						  -- ["S"] = "split_with_window_picker",
