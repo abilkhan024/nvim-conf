@@ -20,6 +20,8 @@ return require('packer').startup(function(use)
 		end
 	}
 
+	use { 'tpope/vim-fugitive' }
+
 	-- Lua
 	use {
 		'abecodes/tabout.nvim',
