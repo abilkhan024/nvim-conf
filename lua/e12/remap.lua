@@ -2,15 +2,19 @@
 vim.keymap.set("n", "<leader>e", vim.cmd.Neotree)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>r", vim.cmd.e)
 vim.keymap.set("n", "<leader>so", vim.cmd.so)
 vim.keymap.set("n", "<leader>c", vim.cmd.bd)
 vim.keymap.set("n", "<leader>ho", vim.cmd.noh)
 
+vim.api.nvim_set_keymap('n', '<leader>pp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>pn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>C', [[:%bd|e#|bd#<CR>'"]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sss', [[:set tabstop=2<CR>:set shiftwidth=2<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ssb', [[:set tabstop=4<CR>:set shiftwidth=4<CR>]], { noremap = true, silent = true })
 vim.keymap.set("n", "<C-w>", "<cmd>set wrap!<CR>")
 
+vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>")
 vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
 vim.keymap.set("n", "<leader>pf", "<cmd>Neoformat<CR>")
 
@@ -20,6 +24,10 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>p", "<cmd>lua vim.diagnostic.open_float()<CR>")
 
 vim.api.nvim_set_keymap('n', '<leader>bfd', "<cmd>call delete(expand('%')) | bdelete!<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>brp", function()
+	vim.api.nvim_call_function("setreg", {"+", vim.fn.fnamemodify(vim.fn.expand("%"), ":.")})
+	vim.cmd("echomsg 'Copied realtive path in clipboard'")
+end, {})
 
 -- Depends on git config
 --[[
