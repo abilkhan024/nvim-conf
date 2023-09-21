@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
 		'cssls',
 		'html',
 		'emmet_language_server',
+		'tailwindcss',
 	}
 })
 
