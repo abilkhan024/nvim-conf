@@ -52,7 +52,7 @@ end, {})
 --]]
 vim.keymap.set("n", "<leader>gpb", "<cmd>!git pb<CR>")
 vim.keymap.set("n", "<leader>glb", [[:lua GitCustom('lb')<CR>]])
-vim.keymap.set("n", "<leader>gbc", function ()
+vim.keymap.set("n", "<leader>grr", function ()
 	local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
 	vim.api.nvim_call_function("setreg", {"+", branch })
 	vim.cmd("echomsg 'Copied current branch:' " .. vim.fn.string(branch))
