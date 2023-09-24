@@ -1,5 +1,6 @@
 
-vim.keymap.set("n", "<leader>e",  "<cmd>Neotree toggle<CR>")
+vim.keymap.set("n", "<leader>e",  "<cmd>Neotree toggle reveal<CR>")
+vim.keymap.set("n", "<leader>o",  "<cmd>Neotree reveal<CR>")
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 vim.keymap.set("n", "<leader>r", vim.cmd.e)
@@ -52,7 +53,7 @@ end, {})
 --]]
 vim.keymap.set("n", "<leader>gpb", "<cmd>!git pb<CR>")
 vim.keymap.set("n", "<leader>glb", [[:lua GitCustom('lb')<CR>]])
-vim.keymap.set("n", "<leader>grr", function ()
+vim.keymap.set("n", "<leader>gyy", function ()
 	local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
 	vim.api.nvim_call_function("setreg", {"+", branch })
 	vim.cmd("echomsg 'Copied current branch:' " .. vim.fn.string(branch))
