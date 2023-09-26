@@ -23,6 +23,10 @@ vim.keymap.set("n", "<leader>pf", "<cmd>Neoformat<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set("n", "<c-l>", "<cmd>wincmd l<CR>")
+vim.keymap.set("n", "<c-h>", "<cmd>wincmd h<CR>")
+vim.keymap.set("n", "<c-j>", "<cmd>wincmd j<CR>")
+vim.keymap.set("n", "<c-k>", "<cmd>wincmd k<CR>")
 
 vim.api.nvim_set_keymap('n', '<leader>bfd', "<cmd>call delete(expand('%')) | bdelete!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>brp", function()
