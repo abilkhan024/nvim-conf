@@ -16,7 +16,9 @@ return require('packer').startup(function(use)
 	use {
 		'numToStr/Comment.nvim',
 		config = function()
-			require('Comment').setup()
+						require('Comment').setup {
+										pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+						}
 		end
 	}
 
@@ -61,8 +63,12 @@ return require('packer').startup(function(use)
 
 	use { 'sbdchd/neoformat' }
 
-  use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'} }
-  -- using packer.nvim
+	use {
+					'nvim-treesitter/nvim-treesitter',
+					run = ':TSUpdate',
+					requires = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+	}
+
   use {
 	  'akinsho/bufferline.nvim',
 	  tag = "*",
@@ -106,7 +112,7 @@ return require('packer').startup(function(use)
   use {
 	  "nvim-neo-tree/neo-tree.nvim",
 	  branch = "v3.x",
-	  requires = { 
+	  requires = {
 		  "nvim-lua/plenary.nvim",
 		  "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		  "MunifTanjim/nui.nvim",
@@ -148,7 +154,7 @@ return require('packer').startup(function(use)
 			  enable_normal_mode_for_inputs = false, -- Enable normal mode for input dialogs.
 			  open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
 			  sort_case_insensitive = false, -- used when sorting files and directories in the tree
-			  sort_function = nil , -- use a custom function for sorting files and directories in the tree 
+			  sort_function = nil , -- use a custom function for sorting files and directories in the tree
 			  -- sort_function = function (a,b)
 				  --       if a.type == b.type then
 				  --           return a.path > b.path
@@ -240,9 +246,9 @@ return require('packer').startup(function(use)
 						  nowait = true,
 					  },
 					  mappings = {
-						  ["<space>"] = { 
-							  "toggle_node", 
-							  nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
+						  ["<space>"] = {
+							  "toggle_node",
+							  nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
 						  },
 						  ["<2-LeftMouse>"] = "open",
 						  ["l"] = "open",
@@ -262,7 +268,7 @@ return require('packer').startup(function(use)
 						  -- ['C'] = 'close_all_subnodes',
 						  ["z"] = "close_all_nodes",
 						  --["Z"] = "expand_all_nodes",
-						  ["a"] = { 
+						  ["a"] = {
 							  "add",
 							  -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
 							  -- some commands may take optional config options, see `:h neo-tree-mappings` for details
