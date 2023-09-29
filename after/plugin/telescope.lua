@@ -3,17 +3,21 @@ local action_state = require('telescope.actions.state')
 
 local custom_actions = {}
 function custom_actions.fzf_multi_select(prompt_bufnr)
-  local picker = action_state.get_current_picker(prompt_bufnr)
-  local num_selections = #picker:get_multi_selection()
+	local success, result = pcall(function()
+		local picker = action_state.get_current_picker(prompt_bufnr)
+		local num_selections = #picker:get_multi_selection()
 
-  if num_selections > 1 then
-    local picker = action_state.get_current_picker(prompt_bufnr)
-    for _, entry in ipairs(picker:get_multi_selection()) do
-      vim.cmd(string.format("%s %s", ":e!", entry.value))
-    end
-  else
-    actions.file_edit(prompt_bufnr)
-  end
+		if num_selections > 1 then
+			for _, entry in ipairs(picker:get_multi_selection()) do
+				vim.cmd(string.format("%s %s", ":e!", entry.value))
+			end
+		else
+			actions.file_edit(prompt_bufnr)
+		end
+	end)
+	if not success then
+		actions.select_default()
+	end
 end
 
 require('telescope').setup {
