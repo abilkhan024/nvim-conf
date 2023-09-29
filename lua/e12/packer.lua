@@ -24,7 +24,10 @@ return require('packer').startup(function(use)
 
 	use { 'tpope/vim-fugitive' }
 
-	-- Lua
+	use { 'Shatur/neovim-session-manager' }
+
+	use {'nvim-telescope/telescope-ui-select.nvim' }
+
 	use {
 		'abecodes/tabout.nvim',
 		config = function()

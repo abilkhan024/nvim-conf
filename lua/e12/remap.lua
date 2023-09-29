@@ -28,12 +28,21 @@ vim.api.nvim_set_keymap('n', '<leader>pp', '<cmd>lua vim.diagnostic.goto_prev()<
 vim.api.nvim_set_keymap('n', '<leader>pn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 -- Close all buffers except current
 vim.api.nvim_set_keymap('n', '<leader>C', [[:%bd|e#|bd#<CR>'"]], { noremap = true, silent = true })
--- Set tabsize 2
-vim.api.nvim_set_keymap('n', '<leader>sss', [[:set tabstop=2<CR>:set shiftwidth=2<CR>]], { noremap = true, silent = true })
--- Set tabsize 4
-vim.api.nvim_set_keymap('n', '<leader>ssb', [[:set tabstop=4<CR>:set shiftwidth=4<CR>]], { noremap = true, silent = true })
+-- Set tabsize 2 - Indent Small
+vim.api.nvim_set_keymap('n', '<leader>is', [[:set tabstop=2<CR>:set shiftwidth=2<CR>]], { noremap = true, silent = true })
+-- Set tabsize 4 - Indent Big
+vim.api.nvim_set_keymap('n', '<leader>ib', [[:set tabstop=4<CR>:set shiftwidth=4<CR>]], { noremap = true, silent = true })
 -- Toggle line wrap
 vim.keymap.set("n", "<C-w>", "<cmd>set wrap!<CR>")
+
+-- Sessions Find
+vim.keymap.set("n", "<leader>sf", "<cmd>SessionManager load_session<CR>")
+-- Sessions Last
+vim.keymap.set("n", "<leader>sl", "<cmd>SessionManager load_last_session<CR>")
+-- Sessions Last
+vim.keymap.set("n", "<leader>ss", "<cmd>SessionManager save_current_session<CR>")
+-- Sessions Delete
+vim.keymap.set("n", "<leader>sd", "<cmd>SessionManager delete_session<CR>")
 
 -- Restart langauge server
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>")
@@ -53,69 +62,27 @@ vim.keymap.set("n", "<c-h>", "<cmd>wincmd h<CR>")
 vim.keymap.set("n", "<c-j>", "<cmd>wincmd j<CR>")
 vim.keymap.set("n", "<c-k>", "<cmd>wincmd k<CR>")
 
--- Buffer force delete file
-vim.api.nvim_set_keymap('n', '<leader>bfd', "<cmd>call delete(expand('%')) | bdelete!<CR>", { noremap = true, silent = true })
+-- Delete current buffer file
+vim.api.nvim_set_keymap('n', '<leader>bd', [[:lua ConfirmDelete()<CR>]], { noremap = true, silent = true })
+
 -- Buffer copy relative path
 vim.keymap.set("n", "<leader>brp", function()
 	vim.api.nvim_call_function("setreg", {"+", vim.fn.fnamemodify(vim.fn.expand("%"), ":.")})
 	vim.cmd("echomsg 'Copied realtive path in clipboard'")
 end, {})
 
--- Depends on git config
---[[
--- git config --global --edit
-[alias]
-    pb = !git push origin $(git symbolic-ref --short HEAD)
-
-    lbf = "!f() { \
-        if [ \"$1\" = \"\" ]; then \
-            git pull origin $(git symbolic-ref --short HEAD) --no-ff; \
-        else \
-            git pull origin \"$1\" --no-ff; \
-        fi \
-    }; f"
-    lb = "!f() { \
-        if [ \"$1\" = \"\" ]; then \
-            git pull origin $(git symbolic-ref --short HEAD); \
-        else \
-            git pull origin \"$1\"; \
-        fi \
-    }; f"
-    c = checkout
---]]
--- Git push branch
-vim.keymap.set("n", "<leader>gpb", "<cmd>!git pb<CR>")
--- Git pull branch
-vim.keymap.set("n", "<leader>glb", [[:lua GitCustom('lb')<CR>]])
 -- Git yank current branch name
-vim.keymap.set("n", "<leader>gyy", function ()
+vim.keymap.set("n", "<leader>gy", function ()
 	local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
 	vim.api.nvim_call_function("setreg", {"+", branch })
 	vim.cmd("echomsg 'Copied current branch:' " .. vim.fn.string(branch))
 end)
--- Git pull branch --no-ff (force)
-vim.keymap.set("n", "<leader>glf", [[:lua GitCustom('lbf')<CR>]])
-vim.keymap.set("n", "<leader>gc", [[:lua GitCustom('c')<CR>]])
--- Depends on git config
 
-
-function GitCustom(command)
-	local user_input = vim.fn.input("git " .. command .." >")
-	if user_input ~= "" then
-		local git_command = "git  " .. command .. " " .. user_input
-		local result = vim.fn.systemlist(git_command)
-		if result and #result > 0 then
-			vim.cmd("echohl Normal | echomsg 'Git Command Result:' | echohl None")
-			vim.cmd("echomsg ''")  -- Add an empty line
-			vim.cmd("echomsg ''")  -- Add an empty line
-			for _, line in ipairs(result) do
-				vim.cmd("echomsg " .. vim.fn.string(line))
-			end
-		else
-			vim.cmd("echo 'No output from Git command.'")
-		end
-	else
-		vim.cmd("echo 'No input provided.'")
-	end
-end
+-- Telescope
+-- View branches
+vim.keymap.set("n", "<leader>gc", '<cmd>Telescope git_branches<CR>')
+-- Find changed files in git
+vim.keymap.set("n", "<leader>gf", '<cmd>Telescope git_status<CR>')
+-- View commits log
+vim.keymap.set("n", "<leader>pl", '<cmd>Telescope git_commits<CR>')
 
