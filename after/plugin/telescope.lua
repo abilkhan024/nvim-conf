@@ -26,19 +26,14 @@ require('telescope').setup {
 		mappings = {
 			i = {
 				['<esc>'] = actions.close,
-				['<C-j>'] = actions.move_selection_next,
-				['<C-k>'] = actions.move_selection_previous,
 				['<tab>'] = actions.move_selection_previous,
 				['<s-tab>'] = actions.move_selection_next,
 				['`'] = actions.toggle_selection,
-				['<cr>'] = custom_actions.fzf_multi_select,
+				['<s-CR>'] = custom_actions.fzf_multi_select,
 			},
 			n = {
 				['<esc>'] = actions.close,
-				['<tab>'] = actions.move_selection_previous,
-				['<s-tab>'] = actions.move_selection_next,
 				['`'] = actions.toggle_selection,
-				['<cr>'] = custom_actions.fzf_multi_select,
 			},
 		},
 		extensions = {
