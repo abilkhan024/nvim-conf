@@ -1,5 +1,5 @@
--- Toggle fileexplorer
-vim.keymap.set("n", "<leader>e",  "<cmd>Neotree toggle reveal<CR>")
+-- Toggle file explorer
+vim.keymap.set("n", "<leader>e",  "<cmd>Neotree float toggle reveal<CR>")
 -- Focus fileexplorer
 vim.keymap.set("n", "<leader>o",  "<cmd>Neotree reveal<CR>")
 -- Write
@@ -65,10 +65,24 @@ vim.keymap.set("n", "<c-k>", "<cmd>wincmd k<CR>")
 -- Delete current buffer file
 vim.api.nvim_set_keymap('n', '<leader>bd', [[:lua ConfirmDelete()<CR>]], { noremap = true, silent = true })
 
+-- Copy Project Root path
+vim.keymap.set("n", "<leader>rp", function()
+	local current_directory = vim.fn.getcwd()
+	vim.fn.setreg('*', current_directory)
+	vim.cmd("echomsg 'Copied project path in clipboard'")
+end, {})
+
 -- Buffer copy relative path
 vim.keymap.set("n", "<leader>brp", function()
 	vim.api.nvim_call_function("setreg", {"+", vim.fn.fnamemodify(vim.fn.expand("%"), ":.")})
 	vim.cmd("echomsg 'Copied realtive path in clipboard'")
+end, {})
+
+-- Buffer copy File Name
+vim.keymap.set("n", "<leader>bfn", function()
+	local current_file = vim.fn.bufname('%:p')
+	vim.fn.setreg('*', current_file)
+	vim.cmd("echomsg 'Copied file name in clipboard'")
 end, {})
 
 -- Git yank current branch name
@@ -84,5 +98,5 @@ vim.keymap.set("n", "<leader>gc", '<cmd>Telescope git_branches<CR>')
 -- Find changed files in git
 vim.keymap.set("n", "<leader>gf", '<cmd>Telescope git_status<CR>')
 -- View commits log
-vim.keymap.set("n", "<leader>pl", '<cmd>Telescope git_commits<CR>')
+vim.keymap.set("n", "<leader>gl", '<cmd>Telescope git_commits<CR>')
 
