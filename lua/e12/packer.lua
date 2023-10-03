@@ -80,8 +80,7 @@ return require('packer').startup(function(use)
 
   use { 'jiangmiao/auto-pairs' }
 
-	-- TODO spend some time because seems like to good
-	use { 'terryma/vim-multiple-cursors' }
+  use { 'mg979/vim-visual-multi' }
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
