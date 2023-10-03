@@ -1,5 +1,7 @@
 -- Toggle file explorer
 vim.keymap.set("n", "<leader>e",  "<cmd>Neotree float toggle reveal<CR>")
+-- Toggle file explorer
+vim.keymap.set("t", "<esc>",  "<C-\\><C-n>")
 -- Focus fileexplorer
 vim.keymap.set("n", "<leader>o",  "<cmd>Neotree reveal<CR>")
 -- Write
@@ -12,8 +14,12 @@ vim.keymap.set("n", "<leader>Q", '<cmd>q!<CR>')
 vim.keymap.set("n", "<leader>r", vim.cmd.e)
 -- Close current buffer
 vim.keymap.set("n", "q", vim.cmd.bd)
+-- Close current buffer
+vim.keymap.set("n", "Q", '<cmd>bdelete!<CR>')
 -- Turnoff search highlight
 vim.keymap.set("n", "<leader>ho", vim.cmd.noh)
+-- Turnoff search highlight
+vim.keymap.set("n", "<leader>tn", '<cmd>terminal<CR>')
 
 -- When changin conf
 -- Source file
