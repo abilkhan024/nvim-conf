@@ -91,17 +91,16 @@ require('neo-tree').setup({
     -- see `:h neo-tree-custom-commands-global`
     commands = {},
     window = {
-      position = "left",
-      width = 40,
+      position = "float",
+      popup = { -- settings that apply to float position only
+        size = { height = "85%", width = "50%" },
+        position = "50%", -- 50% means center it
+      },
       mapping_options = {
         noremap = true,
         nowait = true,
       },
       mappings = {
-        ["<space>"] = {
-          "toggle_node",
-          nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
-        },
         ["<2-LeftMouse>"] = "open",
         ["l"] = "open",
         ["<bs>"] = function(state)
@@ -109,7 +108,7 @@ require('neo-tree').setup({
           require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
         end,
         ["<esc>"] = "cancel", -- close preview or floating neo-tree window
-        ["P"] = { "toggle_preview", config = { use_float = true } },
+        ["P"] = { "toggle_preview", config = { use_float = true, popup = { size = { height = "85%", width = "50%" } } } },
         ["fp"] = "focus_preview",
         ["S"] = "open_split",
         ["s"] = "open_vsplit",
@@ -273,5 +272,4 @@ commands = {} -- Add a custom command or override a global one using the same fu
   vim.fn.sign_define("DiagnosticSignWarn", {text = " ", texthl = "DiagnosticSignWarn"})
   vim.fn.sign_define("DiagnosticSignInfo", {text = " ", texthl = "DiagnosticSignInfo"})
   vim.fn.sign_define("DiagnosticSignHint", {text = "󰌵", texthl = "DiagnosticSignHint"})
-  vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 
