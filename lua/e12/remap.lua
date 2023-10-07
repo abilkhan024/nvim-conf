@@ -10,8 +10,6 @@ vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 -- Quit vim (force)
 vim.keymap.set("n", "<leader>Q", '<cmd>q!<CR>')
--- Update file contents to recent (When git modifies file)
-vim.keymap.set("n", "<leader>r", vim.cmd.e)
 -- Close current buffer
 vim.keymap.set("n", "q", vim.cmd.bd)
 -- Close current buffer
@@ -54,8 +52,8 @@ vim.keymap.set("n", "<leader>sd", "<cmd>SessionManager delete_session<CR>")
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>")
 -- Show git status
 vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
--- Prettier buffer
-vim.keymap.set("n", "<leader>pf", "<cmd>Neoformat<CR>")
+-- foRmat buffer
+vim.keymap.set("n", "<leader>r", "<cmd>Neoformat<CR>")
 
 -- Move selection down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -72,16 +70,27 @@ vim.keymap.set("n", "<c-k>", "<cmd>wincmd k<CR>")
 vim.api.nvim_set_keymap('n', '<leader>bd', [[:lua ConfirmDelete()<CR>]], { noremap = true, silent = true })
 
 -- Copy Project Root path
-vim.keymap.set("n", "<leader>rp", function()
+vim.keymap.set("n", "<leader>br", function()
 	local current_directory = vim.fn.getcwd()
 	vim.fn.setreg('*', current_directory)
 	vim.cmd("echomsg 'Copied project path in clipboard'")
 end, {})
 
 -- Buffer copy relative path
-vim.keymap.set("n", "<leader>brp", function()
+vim.keymap.set("n", "<leader>bp", function()
 	vim.api.nvim_call_function("setreg", {"+", vim.fn.fnamemodify(vim.fn.expand("%"), ":.")})
 	vim.cmd("echomsg 'Copied realtive path in clipboard'")
+end, {})
+
+-- Buffer copy file name
+vim.keymap.set("n", "<leader>bn", function()
+  local current_buffer = vim.fn.bufname("%") -- Get the current buffer's file name
+  if current_buffer == nil then
+    return
+  end
+  local file_name = vim.fn.fnamemodify(current_buffer, ":t:r") -- Extract the file name without extension
+  vim.fn.setreg("+", file_name) -- Copy the result to the system clipboard register
+  vim.cmd('echo "File name copied to clipboard: ' .. file_name .. '"')
 end, {})
 
 -- Buffer copy File Name
