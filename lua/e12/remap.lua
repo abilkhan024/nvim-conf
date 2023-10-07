@@ -60,6 +60,10 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 -- Move selection up
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Keeps selection after indent
+vim.api.nvim_set_keymap('x', '<', '<gv', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', '>', '>gv', { noremap = true, silent = true })
+
 -- Navigate between splits
 vim.keymap.set("n", "<c-l>", "<cmd>wincmd l<CR>")
 vim.keymap.set("n", "<c-h>", "<cmd>wincmd h<CR>")
