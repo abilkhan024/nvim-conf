@@ -97,13 +97,6 @@ vim.keymap.set("n", "<leader>bn", function()
   vim.cmd('echo "File name copied to clipboard: ' .. file_name .. '"')
 end, {})
 
--- Buffer copy File Name
-vim.keymap.set("n", "<leader>bfn", function()
-	local current_file = vim.fn.bufname('%:p')
-	vim.fn.setreg('*', current_file)
-	vim.cmd("echomsg 'Copied file name in clipboard'")
-end, {})
-
 -- Git yank current branch name
 vim.keymap.set("n", "<leader>gy", function ()
 	local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
