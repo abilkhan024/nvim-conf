@@ -111,6 +111,11 @@ vim.keymap.set("n", "<leader>gy", function ()
 	vim.cmd("echomsg 'Copied current branch:' " .. vim.fn.string(branch))
 end)
 
+-- CamelCaseMotion remaps
+vim.api.nvim_set_keymap('n', 'w', '<Plug>CamelCaseMotion_w', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'b', '<Plug>CamelCaseMotion_b', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'e', '<Plug>CamelCaseMotion_e', { noremap = true, silent = true })
+
 -- Telescope
 -- View branches
 vim.keymap.set("n", "<leader>gc", '<cmd>Telescope git_branches<CR>')

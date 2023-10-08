@@ -110,6 +110,9 @@ return require('packer').startup(function(use)
     end,
   })
 
+  local snake_case_var = ''
+
+  use { 'bkad/CamelCaseMotion' }
 
   use {
     "nvim-neo-tree/neo-tree.nvim",
