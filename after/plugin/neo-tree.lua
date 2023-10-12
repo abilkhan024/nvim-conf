@@ -109,7 +109,7 @@ require('neo-tree').setup({
         end,
         ["<esc>"] = "cancel", -- close preview or floating neo-tree window
         ["P"] = { "toggle_preview", config = { use_float = true, popup = { size = { height = "85%", width = "50%" } } } },
-        ["fp"] = "focus_preview",
+        ["<TAB>"] = "focus_preview",
         ["S"] = "open_split",
         ["s"] = "open_vsplit",
         -- ["S"] = "split_with_window_picker",

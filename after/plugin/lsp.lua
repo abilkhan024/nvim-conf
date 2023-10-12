@@ -42,7 +42,6 @@ lsp.on_attach(function(client, bufnr)
 
   vim.keymap.set("n", "gd", '<cmd>Telescope lsp_definitions<cr>', opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = bufnr})
 end)
 
