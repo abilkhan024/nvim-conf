@@ -109,6 +109,13 @@ vim.api.nvim_set_keymap('n', 'w', '<Plug>CamelCaseMotion_w', { noremap = true, s
 vim.api.nvim_set_keymap('n', 'b', '<Plug>CamelCaseMotion_b', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'e', '<Plug>CamelCaseMotion_e', { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('v', 'w', '<Plug>CamelCaseMotion_w', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'b', '<Plug>CamelCaseMotion_b', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'e', '<Plug>CamelCaseMotion_e', { noremap = true, silent = true })
+
+-- Restore closed buffer
+vim.api.nvim_set_keymap('n', 'R', '<C-o>', { noremap = true })
+
 -- Telescope
 -- View branches
 vim.keymap.set("n", "<leader>gc", '<cmd>Telescope git_branches<CR>')
