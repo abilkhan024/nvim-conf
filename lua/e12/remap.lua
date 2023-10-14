@@ -56,7 +56,7 @@ vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
 vim.keymap.set("n", "<leader>r", "<cmd>Neoformat<CR>")
 
 -- Generate doc comments
-vim.keymap.set("n", "<leader>gnc", "<cmd>Neogen<CR>")
+vim.keymap.set("n", "gnc", "<cmd>Neogen<CR>")
 
 -- Move selection down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
