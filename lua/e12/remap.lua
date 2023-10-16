@@ -53,7 +53,7 @@ vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>")
 -- Show git status
 vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
 -- foRmat buffer
-vim.keymap.set("n", "<leader>r", "<cmd>Neoformat<CR>")
+vim.keymap.set("n", "r", "<cmd>Neoformat<CR>", { noremap = true, silent = true })
 
 -- Generate doc comments
 vim.keymap.set("n", "gnc", "<cmd>Neogen<CR>")

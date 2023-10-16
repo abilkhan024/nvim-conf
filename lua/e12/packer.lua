@@ -154,4 +154,7 @@ return require('packer').startup(function(use)
     requires = "nvim-treesitter/nvim-treesitter",
     tag = "*"
   }
+
+  use { 'rhysd/conflict-marker.vim' }
+
 end)
