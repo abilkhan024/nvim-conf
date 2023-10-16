@@ -155,6 +155,8 @@ return require('packer').startup(function(use)
     tag = "*"
   }
 
+
+  -- TODO check if unsatisified with this plugin
   use { 'rhysd/conflict-marker.vim' }
 
 end)
