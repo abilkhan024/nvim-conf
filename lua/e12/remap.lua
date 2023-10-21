@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>ho", vim.cmd.noh)
 -- Open new terminal session
 vim.keymap.set("n", "<leader>tn", '<cmd>terminal<CR>')
 -- Delete without coping in register
-vim.keymap.set("n", "x", [["_d]], { noremap = true, silent = true })
+vim.keymap.set("n", "x", [["_x]], { noremap = true, silent = true })
 vim.keymap.set("v", "x", [["_d]], { noremap = true, silent = true })
 
 -- When changin conf
