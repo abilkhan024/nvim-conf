@@ -58,7 +58,7 @@ vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>")
 -- Show git status
 vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
 -- foRmat buffer
-vim.keymap.set("n", "r", "<cmd>Neoformat<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>r", "<cmd>Neoformat<CR>", { noremap = true, silent = true })
 
 -- Generate doc comments
 vim.keymap.set("n", "gnc", "<cmd>Neogen<CR>")
@@ -122,7 +122,8 @@ vim.api.nvim_set_keymap('v', 'b', '<Plug>CamelCaseMotion_b', { noremap = true, s
 vim.api.nvim_set_keymap('v', 'e', '<Plug>CamelCaseMotion_e', { noremap = true, silent = true })
 
 -- Restore closed buffer
-vim.api.nvim_set_keymap('n', 'R', '<C-o>', { noremap = true })
+vim.api.nvim_set_keymap('n', 'r', '<C-o>', { noremap = true })
+vim.api.nvim_set_keymap('n', 'R', '<C-i>', { noremap = true })
 
 -- Telescope
 -- View branches

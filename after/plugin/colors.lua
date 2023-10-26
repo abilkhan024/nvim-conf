@@ -5,3 +5,5 @@ require("catppuccin").setup({
 		functions = { "bold", "italic" }
 	},
 })
+
+vim.cmd('colorscheme catppuccin')
