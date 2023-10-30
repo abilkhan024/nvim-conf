@@ -44,6 +44,14 @@ vim.api.nvim_set_keymap('n', '<leader>ib', [[:set tabstop=4<CR>:set shiftwidth=4
 -- Toggle line wrap
 vim.keymap.set("n", "<C-w>", "<cmd>set wrap!<CR>")
 
+-- Move between wrapped lines as regular lines
+vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '0', 'g0', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '$', 'g$', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '0', 'g0', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '$', 'g$', { noremap = true, silent = true })
+
 -- Sessions Find
 vim.keymap.set("n", "<leader>sf", "<cmd>SessionManager load_session<CR>")
 -- Sessions Last
