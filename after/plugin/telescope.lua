@@ -48,6 +48,7 @@ vim.keymap.set('n', '<leader>fF', builtin.find_files, {})
 vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set('n', '<leader>fp', builtin.resume, {})
 -- Temp solution to find conflicts
 vim.keymap.set('n', '<leader>fc', function ()
   local conflict_marker = "^<<<"

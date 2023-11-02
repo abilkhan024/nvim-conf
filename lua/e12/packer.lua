@@ -155,8 +155,13 @@ return require('packer').startup(function(use)
     tag = "*"
   }
 
+  -- use {
+  --   'goolord/alpha-nvim',
+  --   config = function ()
+  --     require'alpha'.setup(require'alpha.themes.dashboard'.config)
+  --   end
+  -- }
 
-  -- TODO check if unsatisified with this plugin
   use { 'rhysd/conflict-marker.vim' }
 
 end)
