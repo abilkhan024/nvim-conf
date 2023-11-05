@@ -12,7 +12,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
   ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
+  ['<C-Space>'] = cmp.mapping.complete(),
 })
 cmp.setup({
     mapping = cmp_mappings,
@@ -38,11 +38,11 @@ lsp.set_preferences({
 })
 
 lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+  local opts = { buffer = bufnr, remap = false }
 
-  vim.keymap.set("n", "gd", '<cmd>Telescope lsp_definitions<cr>', opts)
+  vim.keymap.set("n", "gd", '<CMD>Telescope lsp_definitions<CR>', opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-	vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = bufnr})
+	vim.keymap.set('n', 'gr', '<CMD>Telescope lsp_references<CR>', {buffer = bufnr})
 end)
 
 lsp.setup()
