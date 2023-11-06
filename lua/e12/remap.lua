@@ -49,6 +49,8 @@ vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '0', 'g0', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '$', 'g$', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'j', 'gj', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'k', 'gk', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '0', 'g0', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '$', 'g$', { noremap = true, silent = true })
 

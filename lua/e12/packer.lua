@@ -155,11 +155,28 @@ return require('packer').startup(function(use)
     tag = "*"
   }
 
+  -- Use for starter dashboard
   -- use {
   --   'goolord/alpha-nvim',
   --   config = function ()
   --     require'alpha'.setup(require'alpha.themes.dashboard'.config)
   --   end
+  -- }
+
+  -- Use for folding tailwind classes
+  -- use {
+  --   "malbertzard/inline-fold.nvim",
+  --   opts = {
+  --     defaultPlaceholder = "…",
+  --     queries = {
+  --       -- Some examples you can use
+  --       html = {
+  --         { pattern = 'class="([^"]*)"', placeholder = "@" }, -- classes in html
+  --         { pattern = 'href="(.-)"' }, -- hrefs in html
+  --         { pattern = 'src="(.-)"' }, -- HTML img src attribute
+  --       }
+  --     },
+  --   }
   -- }
 
   use { 'rhysd/conflict-marker.vim' }
