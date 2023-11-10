@@ -90,6 +90,8 @@ vim.keymap.set("n", "<c-k>", "<cmd>wincmd k<CR>")
 
 -- Delete current buffer file
 vim.api.nvim_set_keymap('n', '<leader>bd', [[:lua ConfirmDelete()<CR>]], { noremap = true, silent = true })
+-- Checkout new branch
+vim.api.nvim_set_keymap('n', '<leader>gn', [[:lua CreateGitBranch()<CR>]], { noremap = true, silent = true })
 
 -- Copy Project Root path
 vim.keymap.set("n", "<leader>br", function()

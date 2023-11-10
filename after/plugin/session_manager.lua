@@ -18,14 +18,14 @@ session_manager.setup({
   max_path_length = 80,  -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
 })
 
-local config_group = vim.api.nvim_create_augroup('E12ConfigGroup', {}) -- A global group for all your config autocommands
+-- local config_group = vim.api.nvim_create_augroup('E12ConfigGroup', {}) -- A global group for all your config autocommands
 
-vim.api.nvim_create_autocmd({ 'User' }, {
-  pattern = "SessionLoadPost",
-  group = config_group,
-  callback = function()
-		local current_directory = vim.fn.getcwd()
-		local change_dir_command = "cd " .. current_directory
-		vim.fn.setreg('*', change_dir_command)
-  end,
-})
+-- vim.api.nvim_create_autocmd({ 'User' }, {
+--   pattern = "SessionLoadPost",
+--   group = config_group,
+--   callback = function()
+-- 		local current_directory = vim.fn.getcwd()
+-- 		local change_dir_command = "cd " .. current_directory
+-- 		vim.fn.setreg('*', change_dir_command)
+--   end,
+-- })

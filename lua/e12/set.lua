@@ -9,7 +9,7 @@ vim.opt.relativenumber = true
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.wrap = false

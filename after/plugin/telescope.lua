@@ -22,9 +22,13 @@ end
 
 require('telescope').setup {
 	defaults = {
-		file_ignore_patterns = { "node_modules", ".git" },
-		mappings = {
-			i = {
+    layout_config = {
+      width = 0.999,
+      preview_width = 0.5
+    },
+    file_ignore_patterns = { "node_modules", ".git" },
+    mappings = {
+      i = {
 				['<esc>'] = actions.close,
 				['<tab>'] = actions.move_selection_previous,
 				['<s-tab>'] = actions.move_selection_next,
