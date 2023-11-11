@@ -23,3 +23,11 @@ function CreateGitBranch()
     end
 end
 
+function GetLspRootDir()
+  local git_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1])
+  if git_dir then
+    return git_dir
+  end
+  return vim.fn.getcwd()
+end
+

@@ -12,6 +12,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+vim.opt.spell = true
+vim.opt.spelloptions = "camel"
+
 vim.opt.wrap = false
 
 vim.opt.termguicolors = true

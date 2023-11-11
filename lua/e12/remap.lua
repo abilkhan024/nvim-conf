@@ -1,9 +1,7 @@
 -- Toggle file explorer
-vim.keymap.set("n", "<leader>e",  "<cmd>Neotree float toggle reveal<CR>")
+vim.keymap.set("n", "<leader>o",  "<cmd>Neotree float reveal<CR>")
 -- Escape terminal mode
 vim.keymap.set("t", "<esc>",  "<C-\\><C-n>")
--- Focus fileexplorer
-vim.keymap.set("n", "<leader>o",  "<cmd>Neotree reveal<CR>")
 -- Write
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 -- Quit vim
@@ -15,7 +13,9 @@ vim.keymap.set("n", "q", vim.cmd.bd)
 -- Close current buffer
 vim.keymap.set("n", "Q", '<cmd>bdelete!<CR>')
 -- Turnoff search highlight
-vim.keymap.set("n", "<leader>ho", vim.cmd.noh)
+vim.keymap.set("n", "<leader>oh", vim.cmd.noh)
+-- Turnoff search highlight
+vim.keymap.set("n", "<leader>os", "<cmd>set spell!<CR>")
 -- Open new terminal session
 vim.keymap.set("n", "<leader>tn", '<cmd>terminal<CR>')
 -- Delete without coping in register
