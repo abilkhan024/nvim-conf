@@ -100,7 +100,10 @@ return require('packer').startup(function(use)
     }
   }
 
-  use { 'feline-nvim/feline.nvim' }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
   use ({
     'nvimdev/lspsaga.nvim',

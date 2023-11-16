@@ -1,5 +1,5 @@
 -- Toggle file explorer
-vim.keymap.set("n", "<leader>o",  "<cmd>Neotree float reveal<CR>")
+vim.keymap.set("n", "<leader>e",  "<cmd>Neotree float reveal<CR>")
 -- Escape terminal mode
 vim.keymap.set("t", "<esc>",  "<C-\\><C-n>")
 -- Write
