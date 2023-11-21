@@ -2,5 +2,9 @@
   "Get text php": {
     "prefix": "_",
     "body": ["<?= _('$1') ?>"]
+  },
+  "Get text js": {
+    "prefix": "__",
+    "body": ["{{ _('$1') }}"]
   }
 }

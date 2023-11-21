@@ -1,9 +1,4 @@
 {
-  "Template": {
-    "prefix": "template",
-    "body": ["<template>", "$0", "</template>"],
-    "description": "Template for vue"
-  },
   "TypescriptSetup": {
     "prefix": "tts",
     "body": ["<script lang=\"ts\" setup>", "$0", "</script>"],
@@ -32,5 +27,9 @@
   "Async arrow": {
     "prefix": "casync",
     "body": ["const $1 = async ($2) => {", "\t$3", "}"]
+  },
+  "Get text js": {
+    "prefix": "__",
+    "body": ["{{ _('$1') }}"]
   }
 }
