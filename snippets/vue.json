@@ -1,0 +1,36 @@
+{
+  "Template": {
+    "prefix": "template",
+    "body": ["<template>", "$0", "</template>"],
+    "description": "Template for vue"
+  },
+  "TypescriptSetup": {
+    "prefix": "tts",
+    "body": ["<script lang=\"ts\" setup>", "$0", "</script>"],
+    "description": "Typescript script setup"
+  },
+  "JSSetup": {
+    "prefix": "jst",
+    "body": ["<script setup>", "$0", "</script>"],
+    "description": "Typescript script setup"
+  },
+  "SCSS style": {
+    "prefix": "ssstyle",
+    "body": ["<style lang=\"scss\" $0>", "$1", "</style>"],
+    "description": "SCSS style"
+  },
+  "Props": {
+    "prefix": "vprop",
+    "body": ["const props = defineProps<$0>()"],
+    "description": "Define props macro"
+  },
+  "Emits": {
+    "prefix": "vemit",
+    "body": ["const emit = defineEmits<$0>()"],
+    "description": "Define props macro"
+  },
+  "Async arrow": {
+    "prefix": "casync",
+    "body": ["const $1 = async ($2) => {", "\t$3", "}"]
+  }
+}

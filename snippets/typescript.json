@@ -1,0 +1,15 @@
+{
+  "Export interface": {
+    "prefix": "exint",
+    "body": ["export interface $1 {", "  $2", "}"],
+    "description": "Export interface"
+  },
+  "Function declare": {
+    "prefix": "fun",
+    "body": ["function $1($2) {", "  $3", "}"]
+  },
+  "Async arrow": {
+    "prefix": "casync",
+    "body": ["const $1 = async ($2) => {", "\t$3", "}"]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "React function component": {
+    "prefix": "rfc",
+    "body": [
+      "import { FC, HTMLProps, ReactNode } from \"react\";",
+      "",
+      "export interface ${TM_FILENAME_BASE}Props extends HTMLProps<$2HTMLDivElement> {",
+      "  children: ReactNode;",
+      "}",
+      "",
+      "const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = ({}: ${TM_FILENAME_BASE}Props) => {",
+      "  return <$1div></$1div>;",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE};"
+    ]
+  },
+  "Async arrow": {
+    "prefix": "casync",
+    "body": ["const $1 = async ($2) => {", "\t$3", "}"]
+  }
+}
