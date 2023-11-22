@@ -36,7 +36,7 @@ end
 function TodaysNote()
   local currentDate = os.date("%d-%m-%Y")
   local relativeDir = vim.fn.input("Enter relative dir: ", '', 'file')
-  if relativeDir ~= '' or relativeDir ~= '/'  then
+  if relativeDir == '' then
     return print('Exting todays note prompt')
   end
   local fileName = relativeDir .. "/" .. currentDate .. ".md"
