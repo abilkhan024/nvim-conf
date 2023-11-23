@@ -11,7 +11,7 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace, }),
+  ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert, }),
   ['<C-Space>'] = cmp.mapping.complete(),
 })
 cmp.setup({
@@ -41,7 +41,7 @@ lsp.set_preferences({
     }
 })
 
-vim.g.vsnip_snippet_dir = './snippets'
+vim.g.vsnip_snippet_dir = '~/.config/nvim/snippets'
 
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
