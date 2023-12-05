@@ -1,5 +1,20 @@
 local lspconfig = require('lspconfig')
 
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
+local organize_imports_command = {
+  organize_imports,
+  description = "Organize Imports"
+}
+
+
 lspconfig.volar.setup({
   filetypes = { 'typescript', 'javascript', 'vue', 'json' },
   root_dir = GetLspRootDir,
@@ -10,6 +25,11 @@ lspconfig.intelephense.setup({
   root_dir = GetLspRootDir,
 })
 
+lspconfig.tsserver.setup {
+  commands = {
+    OrganizeImports = organize_imports_command
+  }
+}
 
 lspconfig.emmet_language_server.setup({
   filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "php" },

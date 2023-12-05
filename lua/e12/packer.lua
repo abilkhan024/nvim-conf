@@ -113,10 +113,10 @@ return require('packer').startup(function(use)
     'nvimdev/lspsaga.nvim',
     after = 'nvim-lspconfig',
     config = function()
-      require('lspsaga').setup({
-        code_action_prompt = { enable = false, }
-      })
-    end,
+     require('lspsaga').setup({
+       lightbulb = { enable = false },
+     })
+   end,
   })
 
   use { 'bkad/CamelCaseMotion' }

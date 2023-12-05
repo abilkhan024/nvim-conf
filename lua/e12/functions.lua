@@ -39,7 +39,7 @@ function TodaysNote()
   if relativeDir == '' then
     return print('Exting todays note prompt')
   end
-  local fileName = relativeDir .. "/" .. currentDate .. ".md"
+  local fileName = relativeDir .. currentDate .. ".md"
   local file, error_message = io.open(fileName, "w")
   print('\n')
   if file then
