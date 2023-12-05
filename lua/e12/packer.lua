@@ -164,6 +164,8 @@ return require('packer').startup(function(use)
     tag = "*"
   }
 
+  use 'mbbill/undotree'
+
   -- Use for starter dashboard
   -- use {
   --   'goolord/alpha-nvim',
