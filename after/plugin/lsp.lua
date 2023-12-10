@@ -9,8 +9,8 @@ lsp.nvim_workspace()
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<Up>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<Down>'] = cmp.mapping.select_next_item(cmp_select),
   ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert, }),
   ['<C-Space>'] = cmp.mapping.complete(),
 })

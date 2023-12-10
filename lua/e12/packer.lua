@@ -166,14 +166,6 @@ return require('packer').startup(function(use)
 
   use 'mbbill/undotree'
 
-  -- Use for starter dashboard
-  -- use {
-  --   'goolord/alpha-nvim',
-  --   config = function ()
-  --     require'alpha'.setup(require'alpha.themes.dashboard'.config)
-  --   end
-  -- }
-
   -- Use for folding tailwind classes
   -- use {
   --   "malbertzard/inline-fold.nvim",

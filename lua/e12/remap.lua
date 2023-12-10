@@ -83,10 +83,10 @@ vim.api.nvim_set_keymap('x', '<', '<gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '>', '>gv', { noremap = true, silent = true })
 
 -- Navigate between splits
-vim.keymap.set("n", "<c-l>", "<cmd>wincmd l<CR>")
-vim.keymap.set("n", "<c-h>", "<cmd>wincmd h<CR>")
-vim.keymap.set("n", "<c-j>", "<cmd>wincmd j<CR>")
-vim.keymap.set("n", "<c-k>", "<cmd>wincmd k<CR>")
+vim.keymap.set("n", "<Right>", "<cmd>wincmd l<CR>")
+vim.keymap.set("n", "<Left>", "<cmd>wincmd h<CR>")
+vim.keymap.set("n", "<Down>", "<cmd>wincmd j<CR>")
+vim.keymap.set("n", "<Up>", "<cmd>wincmd k<CR>")
 
 -- Delete current buffer file
 vim.api.nvim_set_keymap('n', '<leader>bd', [[:lua ConfirmDelete()<CR>]], { noremap = true, silent = true })

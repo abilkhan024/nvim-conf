@@ -29,16 +29,13 @@ require('telescope').setup {
     file_ignore_patterns = { "node_modules", ".git" },
     mappings = {
       i = {
-				['<esc>'] = actions.close,
-				['<tab>'] = actions.move_selection_previous,
-				['<s-tab>'] = actions.move_selection_next,
-				['`'] = actions.toggle_selection,
+				['<Up>'] = actions.move_selection_previous,
+				['<Down>'] = actions.move_selection_next,
+				['<Tab>'] = actions.toggle_selection,
 				['<s-CR>'] = custom_actions.fzf_multi_select,
+				['<esc>'] = custom_actions.close,
 			},
-			n = {
-				['<esc>'] = actions.close,
-				['`'] = actions.toggle_selection,
-			},
+			n = { },
 		},
 		extensions = {
 			["ui-select"] = {
