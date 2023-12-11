@@ -1,3 +1,7 @@
+function ClearQuickfixList()
+    vim.fn.setqflist({})
+end
+
 function ConfirmDelete()
   local file = vim.fn.expand('%')
   local confirm = vim.fn.input("Delete file " .. file .. "? (y/n): ")

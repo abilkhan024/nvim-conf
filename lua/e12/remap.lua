@@ -1,3 +1,4 @@
+vim.api.nvim_set_keymap('n', '<leader>cq', '<CMD>lua ClearQuickfixList()<CR>', { noremap = true, silent = true })
 -- Toggle file explorer
 vim.keymap.set("n", "<leader>e",  "<cmd>Neotree float reveal<CR>")
 -- Escape terminal mode
