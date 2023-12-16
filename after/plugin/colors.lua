@@ -2,8 +2,8 @@ require("catppuccin").setup({
 	styles = {
 		comments = { "italic" },
 		conditionals = { "italic" },
-		functions = { "bold", "italic" }
+		functions = { "bold", "italic" },
 	},
 })
 
-vim.cmd('colorscheme catppuccin')
+vim.cmd("colorscheme catppuccin")
