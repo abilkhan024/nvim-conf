@@ -9,7 +9,8 @@ require("mason-lspconfig").setup({
 		"tailwindcss",
 		"marksman",
 		"clangd",
-		"pint",
-		"stylua",
+		-- Formatters
+		-- "pint",
+		-- "stylua",
 	},
 })
