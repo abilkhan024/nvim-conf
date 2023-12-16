@@ -31,29 +31,6 @@ return require('packer').startup(function(use)
 
   use {
     'abecodes/tabout.nvim',
-    config = function()
-      require('tabout').setup {
-        tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
-        backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
-        act_as_tab = true, -- shift content if tab out is not possible
-        act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
-        default_tab = '<C-t>', -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
-        default_shift_tab = '<C-d>', -- reverse shift default action,
-        enable_backwards = true, -- well ...
-        completion = true, -- if the tabkey is used in a completion pum
-        tabouts = {
-          { open = "'", close = "'" },
-          { open = '"', close = '"' },
-          { open = '`', close = '`' },
-          { open = '(', close = ')' },
-          { open = '[', close = ']' },
-          { open = '{', close = '}' },
-          { open = '<', close = '>' },
-        },
-        ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
-        exclude = {} -- tabout will ignore these filetypes
-      }
-    end,
     wants = {'nvim-treesitter'}, -- or require if not used so far
     after = {'nvim-cmp'} -- if a completion plugin is using tabs load it before
   }
@@ -132,23 +109,6 @@ return require('packer').startup(function(use)
         -- only needed if you want to use the commands with "_with_window_picker" suffix
         's1n7ax/nvim-window-picker',
         tag = "v1.*",
-        config = function()
-          require'window-picker'.setup({
-            autoselect_one = true,
-            include_current = false,
-            filter_rules = {
-              -- filter using buffer options
-              bo = {
-                -- if the file type is one of following, the window will be ignored
-                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
-
-                -- if the buffer type is one of following, the window will be ignored
-                buftype = { 'terminal', "quickfix" },
-              },
-            },
-            other_win_hl_color = '#e35e4f',
-          })
-        end,
       }
     },
   }
