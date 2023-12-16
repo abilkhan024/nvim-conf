@@ -93,7 +93,7 @@ require('neo-tree').setup({
     window = {
       position = "float",
       popup = { -- settings that apply to float position only
-        size = { height = "85%", width = "80%" },
+        size = { height = "85%", width = "50%" },
         position = "50%", -- 50% means center it
       },
       mapping_options = {

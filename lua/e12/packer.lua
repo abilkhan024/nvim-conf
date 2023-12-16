@@ -128,6 +128,8 @@ return require('packer').startup(function(use)
 
   use { 'nvim-pack/nvim-spectre', requires = 'nvim-lua/plenary.nvim' }
 
+  use { "Pocco81/true-zen.nvim" }
+
   -- Use for folding tailwind classes
   -- use {
   --   "malbertzard/inline-fold.nvim",
