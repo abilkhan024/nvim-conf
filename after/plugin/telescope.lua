@@ -1,7 +1,7 @@
 local actions = require('telescope.actions')
 
 require('telescope').setup {
-	defaults = {
+  defaults = {
     layout_config = {
       width = 0.999,
       preview_width = 0.5
@@ -9,20 +9,23 @@ require('telescope').setup {
     file_ignore_patterns = { "node_modules", ".git" },
     mappings = {
       i = {
-				['<Up>'] = actions.move_selection_previous,
-				['<Down>'] = actions.move_selection_next,
-				['<Tab>'] = actions.toggle_selection,
-				['<s-CR>'] = actions.send_to_qflist,
-				['<esc>'] = actions.close,
-			},
-			n = { },
-		},
-		extensions = {
-			["ui-select"] = {
-				require("telescope.themes").get_dropdown { }
-			}
-		}
-	}
+        ['<Up>'] = actions.move_selection_previous,
+        ['<Down>'] = actions.move_selection_next,
+        ['<Tab>'] = actions.toggle_selection,
+        ['<s-CR>'] = actions.send_to_qflist,
+        ['<esc>'] = actions.close,
+        ['<s-Tab>'] = require('telescope.actions.layout').toggle_preview
+      },
+    },
+    preview = {
+      hide_on_startup = true -- hide previewer when picker starts
+    },
+    extensions = {
+      ["ui-select"] = {
+        require("telescope.themes").get_dropdown { }
+      }
+    }
+  }
 }
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>fF', builtin.find_files, {})
