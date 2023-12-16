@@ -166,8 +166,7 @@ return require('packer').startup(function(use)
 
   use 'mbbill/undotree'
 
-  -- Find and replace or consider https://www.reddit.com/r/neovim/comments/yprqa0/you_workflow_to_search_and_replace_text_in_project/
-  -- use { 'nvim-pack/nvim-spectre' }
+  use { 'nvim-pack/nvim-spectre', requires = 'nvim-lua/plenary.nvim' }
 
   -- Use for folding tailwind classes
   -- use {
