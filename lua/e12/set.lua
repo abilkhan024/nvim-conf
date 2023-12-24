@@ -7,6 +7,9 @@ vim.opt.ignorecase = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.api.nvim_set_option('cursorline', true)
+vim.api.nvim_set_option('cursorlineopt', 'number')
+
 vim.opt.clipboard = "unnamedplus"
 
 vim.cmd('set nohlsearch')
