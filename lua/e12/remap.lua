@@ -23,6 +23,9 @@ vim.keymap.set("n", "<leader>tn", '<cmd>terminal<CR>')
 vim.keymap.set("n", "x", [["_x]], { noremap = true, silent = true })
 vim.keymap.set("v", "x", [["_d]], { noremap = true, silent = true })
 
+-- Turnoff search highlight
+vim.keymap.set("n", "<leader>zt", "<cmd>ZenMode<CR>")
+
 -- When changin conf
 -- Source file
 vim.keymap.set("n", "<leader><leader>s", vim.cmd.so)
