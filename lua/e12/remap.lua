@@ -26,7 +26,7 @@ vim.keymap.set("v", "x", [["_d]], { noremap = true, silent = true })
 -- Turnoff search highlight
 vim.keymap.set("n", "<leader>zt", "<cmd>ZenMode<CR>")
 
--- When changin conf
+-- When changing conf
 -- Source file
 vim.keymap.set("n", "<leader><leader>s", vim.cmd.so)
 -- Packer sync
@@ -71,7 +71,7 @@ vim.keymap.set("n", "<leader>sd", "<cmd>SessionManager delete_session<CR>")
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>")
 -- Show git status
 vim.keymap.set("n", "<leader>gt", "<cmd>Neotree float git_status<CR>")
--- foRmat buffer
+-- format buffer
 vim.keymap.set("n", "<leader>r", "<cmd>Neoformat<CR>", { noremap = true, silent = true })
 
 -- Generate doc comments
@@ -96,7 +96,7 @@ vim.keymap.set("n", "<Up>", "<cmd>wincmd k<CR>")
 vim.api.nvim_set_keymap('n', '<leader>bd', [[:lua ConfirmDelete()<CR>]], { noremap = true, silent = true })
 -- Checkout new branch
 vim.api.nvim_set_keymap('n', '<leader>gn', [[:lua CreateGitBranch()<CR>]], { noremap = true, silent = true })
--- Delete current buffer file
+-- Create markdown file with current date
 vim.api.nvim_set_keymap('n', '<leader>utn', [[:lua TodaysNote()<CR>]], { noremap = true, silent = true })
 
 -- Copy Project Root path

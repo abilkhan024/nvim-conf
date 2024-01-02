@@ -130,6 +130,11 @@ return require('packer').startup(function(use)
 
   use { "folke/zen-mode.nvim" }
 
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+  })
+
   -- Use for folding tailwind classes
   -- use {
   --   "malbertzard/inline-fold.nvim",
