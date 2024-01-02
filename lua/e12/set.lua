@@ -9,12 +9,12 @@ vim.opt.ignorecase = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.api.nvim_set_option('cursorline', true)
-vim.api.nvim_set_option('cursorlineopt', 'number')
+vim.api.nvim_set_option("cursorline", true)
+vim.api.nvim_set_option("cursorlineopt", "number")
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.cmd('set nohlsearch')
+vim.cmd("set nohlsearch")
 vim.opt.incsearch = true
 
 vim.opt.spell = true
@@ -28,8 +28,7 @@ vim.opt.so = 50
 
 vim.g.mapleader = " "
 
-vim.opt.tabstop =  2
+vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
 vim.opt.expandtab = true
-
