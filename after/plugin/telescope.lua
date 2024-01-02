@@ -1,6 +1,13 @@
 local actions = require("telescope.actions")
 
 require("telescope").setup({
+	pickers = {
+		git_branches = {
+			mappings = {
+				i = { ["<cr>"] = actions.git_switch_branch },
+			},
+		},
+	},
 	defaults = {
 		layout_config = {
 			width = 0.9,

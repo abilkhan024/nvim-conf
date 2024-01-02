@@ -1,5 +1,7 @@
 vim.opt.guicursor = ""
 
+vim.g.skip_ts_context_commentstring_module = true
+
 vim.g.neoformat_try_node_exe = 1
 
 vim.opt.ignorecase = true
