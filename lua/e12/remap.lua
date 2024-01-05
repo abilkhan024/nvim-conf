@@ -3,7 +3,7 @@ vim.api.nvim_set_keymap("n", "<leader>cq", "<CMD>lua ClearQuickfixList()<CR>", {
 -- Open quickfix
 vim.api.nvim_set_keymap("n", "<leader>oq", "<CMD>lua OpenAllQuickfixFiles()<CR>", { noremap = true, silent = true })
 -- Toggle file explorer
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree float reveal<CR>")
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree float reveal toggle<CR>")
 -- Escape terminal mode
 vim.keymap.set("t", "<esc>", "<C-\\><C-n>")
 -- Write
