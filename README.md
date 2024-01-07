@@ -1,6 +1,10 @@
-# Setup
+# Setup (MacOS primarily)
 
-## [iterm](/iterm/README.md)
+```sh
+cd .config && git clone https://github.com/abilkhan024/configs.git .
+```
+
+## [iterm](iterm/README.md)
 
 ## [Neovim](nvim/README.md)
 
