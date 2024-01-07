@@ -1,3 +1,7 @@
 plugin/packer_compiled.lua
 undo_tree_store
-
+.DS_Store
+configstore
+iterm2
+yarn
+karabiner/automatic_backups
